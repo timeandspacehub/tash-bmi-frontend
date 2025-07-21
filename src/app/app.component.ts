@@ -1,14 +1,19 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { BmiInputComponentComponent } from './bmi-input-component/bmi-input-component.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, BmiInputComponentComponent],
+  standalone: true,             
+  imports: [FormsModule],       
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'my-angular-app';
+  formData = {
+    height: 0,
+    weight: 0
+  };
+
+  onSubmit() {
+    console.log('Form Data:', this.formData);
+  }
 }
