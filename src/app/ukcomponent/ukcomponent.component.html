@@ -1,0 +1,13 @@
+<h2>BMI Calculator: UK Metrics</h2>
+<form (ngSubmit)="calculateUKBMI()">
+    <label>Height (Meter) : </label>
+    <input type="number" [(ngModel)]="height" name="height" required />
+    <br/><br/>
+    <label>Weight (kg) : </label>
+    <input type="number" [(ngModel)]="weight" name="weight" required />
+    <br/><br/>
+    <button type="submit">Calculate BMI</button>
+</form>
+
+<p *ngIf="error" style="color: red;">{{ error }}</p>
+<app-ukcomponentresult *ngIf="bmiResult" [result]="bmiResult"></app-ukcomponentresult>
