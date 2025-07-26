@@ -1,19 +1,30 @@
-<h2>Welcome To BMI Calculation</h2>
+<h2>Welcome To BMI Calculation (USCS)</h2>
 
 <form #bmiForm="ngForm" (ngSubmit)="onSubmit()">
   <div>
-    <label for="height">Height:</label>
+    <label for="feet">Height (feet):</label>
     <input
       type="number"
-      id="height"
-      name="height"
-      [(ngModel)]="formData.height"
+      id="feet"
+      name="feet"
+      [(ngModel)]="formData.feet"
       required
     />
   </div>
 
   <div>
-    <label for="weight">Weight:</label>
+    <label for="inches">Height (inches):</label>
+    <input
+      type="number"
+      id="inches"
+      name="inches"
+      [(ngModel)]="formData.inches"
+      required
+    />
+  </div>
+
+  <div>
+    <label for="weight">Weight (pounds):</label>
     <input
       type="number"
       id="weight"
@@ -23,5 +34,9 @@
     />
   </div>
 
-  <button type="submit" [disabled]="bmiForm.invalid">Submit</button>
+  <button type="submit">Calculate BMI</button>
 </form>
+
+<div *ngIf="bmiResult">
+  <p><strong>Result:</strong> {{ bmiResult }}</p>
+</div>
