@@ -1,14 +1,18 @@
+
+
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BmiService } from './services/bmi.service';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-
+import { UkcomponentComponent } from './ukcomponent/ukcomponent.component';
 @Component({
   selector: 'app-root',
   standalone: true,             
-  imports: [FormsModule, CommonModule, HttpClientModule],       
+  imports: [FormsModule, CommonModule, HttpClientModule,UkcomponentComponent],       
+
   templateUrl: './app.component.html',
+  
 })
 export class AppComponent {
   formData = {
