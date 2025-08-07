@@ -5,11 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { BmiService } from './services/bmi.service';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterOutlet } from '@angular/router';
 import { UkcomponentComponent } from './ukcomponent/ukcomponent.component';
 @Component({
   selector: 'app-root',
   standalone: true,             
-  imports: [FormsModule, CommonModule, HttpClientModule,UkcomponentComponent],       
+  imports: [RouterOutlet,FormsModule, CommonModule, HttpClientModule,UkcomponentComponent],       
 
   templateUrl: './app.component.html',
   
